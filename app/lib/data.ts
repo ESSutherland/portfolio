@@ -43,7 +43,7 @@ export const projects = [
     description:
       "A Pokedex App that uses the PokeAPI and Pokenode-ts to display information about Pokemon.",
     github: "https://github.com/ESSutherland/Pokedex",
-    demo: "https://ethansutherland.net/Pokedex/",
+    demo: "https://essutherland.github.io/Pokedex/",
     image: "/pokedex.png",
     tags: ["React", "TypeScript", "TailwindCSS", "API"],
   },
@@ -61,7 +61,7 @@ export const projects = [
     description:
       "A game I made using Godot for a friend. It is a simple infinite runner game.",
     github: "https://github.com/ESSutherland/Kian",
-    demo: "https://ethansutherland.net/Kian/",
+    demo: "https://essutherland.github.io/Kian/",
     image: "/kian.png",
     tags: ["Godot", "GDScript"],
   },
