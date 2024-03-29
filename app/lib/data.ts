@@ -39,6 +39,15 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Pengwin's Langing Page",
+    description:
+      "A landing page for my brother who is twitch streamer. It is a simple page that uses Next.js and TailwindCSS.",
+    github: "https://github.com/ESSutherland/Pengwin",
+    demo: "https://pengwin-xi.vercel.app/",
+    image: "/pengwin.png",
+    tags: ["React", "TypeScript", "TailwindCSS", "Next.js"],
+  },
+  {
     title: "Pokedex App",
     description:
       "A Pokedex App that uses the PokeAPI and Pokenode-ts to display information about Pokemon.",
