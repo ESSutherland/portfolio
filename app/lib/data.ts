@@ -40,8 +40,7 @@ export const skills = [
 export const projects = [
   {
     title: "Pengwin's Langing Page",
-    description:
-      "A landing page for my brother who is twitch streamer. It is a simple page that uses Next.js and TailwindCSS.",
+    description: "A landing page for my brother who is twitch streamer.",
     github: "https://github.com/ESSutherland/Pengwin",
     demo: "https://pengwin-xi.vercel.app/",
     image: "/pengwin.png",
