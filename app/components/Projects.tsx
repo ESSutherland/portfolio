@@ -2,6 +2,7 @@ import React from "react";
 import { projects } from "../lib/data";
 import Link from "next/link";
 import { IoOpenOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const Projects = () => {
   return (
@@ -12,17 +13,24 @@ const Projects = () => {
       <h1 className="text-[2.5rem] font-bold blue_gradient mb-16">Projects</h1>
       <ul className="flex-center flex-wrap gap-10">
         {projects.map((project, index) => (
-          <li className="text-center bg-black/50 p-5 rounded-xl flex max-w-[400px] shadow-lg group h-[350px] relative overflow-hidden">
-            <div className="w-1/2 flex flex-col justify-between h-full">
+          <li className="text-center bg-black/50 p-5 rounded-xl flex-center flex-col w-full mx-3 max-w-[600px] shadow-lg group h-[350px] relative overflow-hidden group">
+            <Image
+              src={project.image}
+              alt={project.title}
+              layout="fill"
+              objectFit="cover"
+              className="group-hover:scale-110 transition-all"
+            />
+            <div className="flex flex-col justify-between w-full h-full absolute z-10 p-5 bg-black/70 origin-top scale-y-0 group-hover:scale-y-100 transition-all">
               <h2 className="text-2xl text-zinc-200 font-extrabold">
                 {project.title}
               </h2>
-              <p className="text-zinc-400 font-semibold">
+              <p className="text-zinc-300 font-semibold">
                 {project.description}
               </p>
-              <ul className="flex-center flex-wrap max-w-[300px] gap-1">
+              <ul className="flex-center w-full flex-wrap gap-1">
                 {project.tags.map((tag, index) => (
-                  <li className="text-sky-500 bg-black/60 p-2 rounded-xl font-semibold">
+                  <li className="text-sky-500 bg-black/60 p-2 rounded-xl font-semibold text-xs">
                     {tag}
                   </li>
                 ))}
@@ -48,11 +56,6 @@ const Projects = () => {
                 )}
               </div>
             </div>
-            <img
-              src={project.image}
-              alt={project.title}
-              className="absolute top-0 left-1/2 h-full translate-x-3 object-cover object-left"
-            />
           </li>
         ))}
       </ul>
