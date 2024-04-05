@@ -47,6 +47,15 @@ export const projects = [
     tags: ["React", "TypeScript", "TailwindCSS", "Next.js"],
   },
   {
+    title: "Discord Bot",
+    description:
+      "A Discord bot that uses the discord.js library to interact with the Discord API. It is used in servers totaling over 9,000 members.",
+    github: "https://github.com/ESSutherland/DiscordBotv3",
+    demo: "",
+    image: "/new_bot.png",
+    tags: ["Typescript", "Node.js", "API", "MongoDB"],
+  },
+  {
     title: "Pokedex App",
     description:
       "A Pokedex App that uses the PokeAPI and Pokenode-ts to display information about Pokemon.",
@@ -56,9 +65,9 @@ export const projects = [
     tags: ["React", "TypeScript", "TailwindCSS", "API"],
   },
   {
-    title: "Discord Bot",
+    title: "Old Discord Bot",
     description:
-      "A Discord bot that uses the discord.py library to interact with the Discord API. It is used in servers totaling over 9,000 members.",
+      "A Discord bot that uses the discord.py library to interact with the Discord API. The older version of my current bot.",
     github: "https://github.com/ESSutherland/DiscordBotv2",
     demo: "",
     image: "/bot.png",

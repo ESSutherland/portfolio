@@ -18,8 +18,7 @@ const Projects = () => {
               src={project.image}
               alt={project.title}
               fill
-              objectFit="cover"
-              className="group-hover:scale-110 transition-all"
+              className="group-hover:scale-110 transition-all object-cover"
             />
             <div className="flex flex-col justify-between w-full h-full absolute z-10 p-5 bg-black/70 backdrop-blur-sm origin-top opacity-0 group-hover:opacity-100 transition-all">
               <h2 className="text-2xl text-zinc-200 font-extrabold">
