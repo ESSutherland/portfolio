@@ -6,8 +6,22 @@ import React from "react";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
+  const firstName = formData.get("firstName");
+  const lastName = formData.get("lastName");
   const senderEmail = formData.get("senderEmail");
   const message = formData.get("message");
+
+  if (!validateString(firstName, 500)) {
+    return {
+      error: "Invalid first name",
+    };
+  }
+
+  if (!validateString(lastName, 500)) {
+    return {
+      error: "Invalid last name",
+    };
+  }
 
   if (!validateString(senderEmail, 500)) {
     return {
@@ -26,7 +40,7 @@ export const sendEmail = async (formData: FormData) => {
     data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: "esutherland95@gmail.com",
-      subject: "New message on your portfolio from " + senderEmail,
+      subject: `New message on your portfolio from ${firstName} ${lastName}`,
       reply_to: senderEmail as string,
       text: message as string,
     });
