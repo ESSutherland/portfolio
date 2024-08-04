@@ -1,11 +1,14 @@
 import React, { useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { FaPaperPlane } from "react-icons/fa6";
+import { LuLoader2 } from "react-icons/lu";
 import { sendEmail } from "../actions/sendEmail";
 import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   const { pending } = useFormStatus();
+  const fNameRef = useRef(null);
+  const lNameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
 
@@ -35,6 +38,15 @@ const Contact = () => {
             toast.error(error);
             return;
           }
+
+          if (fNameRef.current) {
+            (fNameRef.current as HTMLInputElement).value = "";
+          }
+
+          if (lNameRef.current) {
+            (lNameRef.current as HTMLInputElement).value = "";
+          }
+
           if (emailRef.current) {
             (emailRef.current as HTMLInputElement).value = "";
           }
@@ -46,6 +58,26 @@ const Contact = () => {
           toast.success("Message sent!");
         }}
       >
+        <div className="flex w-full justify-between">
+          <input
+            className="h-14 rounded-lg px-4 w-[48%] bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
+            type="text"
+            name="firstName"
+            required
+            maxLength={500}
+            placeholder="First Name"
+            ref={fNameRef}
+          />
+          <input
+            className="h-14 rounded-lg px-4 w-[48%] bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
+            type="text"
+            name="lastName"
+            required
+            maxLength={500}
+            placeholder="Last Name"
+            ref={lNameRef}
+          />
+        </div>
         <input
           className="h-14 rounded-lg px-4 w-full bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
           type="email"
@@ -56,7 +88,7 @@ const Contact = () => {
           ref={emailRef}
         />
         <textarea
-          className="h-52 my-3 rounded-lg p-4 w-full bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
+          className="h-52 rounded-lg p-4 w-full bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
           name="message"
           placeholder="Your message"
           required
@@ -68,8 +100,14 @@ const Contact = () => {
           className="bg-sky-500 hover:bg-sky-600 text-zinc-200 font-bold rounded-lg h-14 w-[80%] flex-center gap-3 group hover:scale-[1.02] transition-all disabled:bg-zinc-500"
           disabled={pending}
         >
-          Send{" "}
-          <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1" />
+          {pending ? (
+            <LuLoader2 className="animate-spin size-8" />
+          ) : (
+            <>
+              Send{" "}
+              <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </>
+          )}
         </button>
       </form>
     </section>
