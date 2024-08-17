@@ -14,7 +14,7 @@ const About = () => {
       <h1 className="text-[2.5rem] font-bold blue_gradient">About Me</h1>
       <p className="text-lg max-w-[800px]">
         My name is <span className="font-bold">Ethan Sutherland</span>, I am a
-        developer based in West Des Moines, Iowa. I graduated from{" "}
+        developer based in Des Moines, Iowa. I graduated from{" "}
         <span className="font-bold">Des Moines Area Community College</span>{" "}
         with an AAS Degree in Business Information Systems with a focus on
         Object-Oriented Programming. In my free time I enjoy playing and making
