@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const navData = [
   {
     label: "Home",
@@ -39,7 +41,15 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Pengwin's Langing Page",
+    title: "Squad Timer",
+    description:
+      "An application I made with some friends that allows users to create timers for their Twitch streams. I developed the frontend of this application using Next.js and TailwindCSS.",
+    demo: "https://squadtimer.tv/",
+    image: "/squadtimer.png",
+    tags: ["Next.js", "TypeScript", "TailwindCSS", "API", "Websockets"],
+  },
+  {
+    title: "Pengwin's Landing Page",
     description: "A landing page for my brother who is a Twitch streamer.",
     github: "https://github.com/ESSutherland/Pengwin",
     demo: "https://pengwin-xi.vercel.app/",

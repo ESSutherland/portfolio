@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { FaPaperPlane } from "react-icons/fa6";
-import { LuLoader2 } from "react-icons/lu";
+import { LuLoader } from "react-icons/lu";
 import { sendEmail } from "../actions/sendEmail";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -30,7 +30,7 @@ const Contact = () => {
       </h2>
       <Toaster />
       <form
-        className="mt-16 flex-center flex-col gap-4 w-full"
+        className="mt-16 flex flex-col gap-4 w-full justify-center items-center"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 
@@ -58,9 +58,9 @@ const Contact = () => {
           toast.success("Message sent!");
         }}
       >
-        <div className="flex w-full justify-between">
+        <div className="flex w-full items-center justify-center gap-2">
           <input
-            className="h-14 rounded-lg px-4 w-[48%] bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
+            className="grow h-14 rounded-lg px-4 w-full bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
             type="text"
             name="firstName"
             required
@@ -69,7 +69,7 @@ const Contact = () => {
             ref={fNameRef}
           />
           <input
-            className="h-14 rounded-lg px-4 w-[48%] bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
+            className="grow h-14 rounded-lg px-4 w-full bg-zinc-500 text-white placeholder:text-zinc-200 outline-none"
             type="text"
             name="lastName"
             required
@@ -101,7 +101,7 @@ const Contact = () => {
           disabled={pending}
         >
           {pending ? (
-            <LuLoader2 className="animate-spin size-8" />
+            <LuLoader className="animate-spin size-8" />
           ) : (
             <>
               Send{" "}

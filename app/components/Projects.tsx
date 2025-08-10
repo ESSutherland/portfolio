@@ -34,15 +34,18 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
+
               <div className="flex-center gap-6 font-semibold">
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  className="flex-center gap-2 text-zinc-200 hover:text-sky-500 hover:scale-110 active:scale-100 transition-all"
-                >
-                  GitHub
-                  <IoOpenOutline />
-                </Link>
+                {project.github && (
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className="flex-center gap-2 text-zinc-200 hover:text-sky-500 hover:scale-110 active:scale-100 transition-all"
+                  >
+                    GitHub
+                    <IoOpenOutline />
+                  </Link>
+                )}
                 {project.demo && (
                   <Link
                     href={project.demo}
